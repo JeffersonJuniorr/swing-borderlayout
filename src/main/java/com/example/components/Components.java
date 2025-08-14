@@ -5,7 +5,7 @@ import java.awt.*;
 
 import static com.example.util.IconLoader.loadIcon;
 
-public class Components extends JFrame {
+public class Components{
 
     private JButton createButton(String text, String iconPath, String tooltipHtml, int mnemonic) {
         JButton b = new JButton(text);
@@ -21,7 +21,7 @@ public class Components extends JFrame {
         return b;
     }
 
-    public void addComponents() {
+    public void addComponents(JFrame frame) {
         JButton btnNorte  = createButton(
                 "NORTE", "/icons/north.png",
                 "<html><b>Ir para o Norte</b><br/>Atalho: Alt+N</html>", 'N');
@@ -44,21 +44,21 @@ public class Components extends JFrame {
 
         // Ações simples de demonstração
         btnNorte.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Clique em NORTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
+                JOptionPane.showMessageDialog(frame, "Clique em NORTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
         btnSul.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Clique em SUL!", "Ação", JOptionPane.INFORMATION_MESSAGE));
+                JOptionPane.showMessageDialog(frame, "Clique em SUL!", "Ação", JOptionPane.INFORMATION_MESSAGE));
         btnOeste.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Clique em OESTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
+                JOptionPane.showMessageDialog(frame, "Clique em OESTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
         btnLeste.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Clique em LESTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
+                JOptionPane.showMessageDialog(frame, "Clique em LESTE!", "Ação", JOptionPane.INFORMATION_MESSAGE));
         btnCentro.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Clique em CENTRO!", "Ação", JOptionPane.INFORMATION_MESSAGE));
+                JOptionPane.showMessageDialog(frame, "Clique em CENTRO!", "Ação", JOptionPane.INFORMATION_MESSAGE));
 
-        add(btnNorte,  BorderLayout.NORTH);
-        add(btnSul,    BorderLayout.SOUTH);
-        add(btnOeste,  BorderLayout.WEST);
-        add(btnLeste,  BorderLayout.EAST);
-        add(btnCentro, BorderLayout.CENTER);
+        frame.add(btnNorte,  BorderLayout.NORTH);
+        frame.add(btnSul,    BorderLayout.SOUTH);
+        frame.add(btnOeste,  BorderLayout.WEST);
+        frame.add(btnLeste,  BorderLayout.EAST);
+        frame.add(btnCentro, BorderLayout.CENTER);
     }
 
 }
